@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitrajtrobotum - Bakımda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 193, 7, 0.03) 10px,
+                rgba(255, 193, 7, 0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 60px 60px;
+            border-radius: 20px;
+            border: 2px solid #ffc107;
+            box-shadow: 0 0 30px rgba(255, 193, 7, 0.3),
+                        inset 0 0 20px rgba(255, 193, 7, 0.1);
+            max-width: 1000px;
+            margin: 0 20px;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        h1 {
+            font-size: 80px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            background: linear-gradient(90deg, #ffc107, #ffeb3b, #ffc107);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        
+        .subtitle {
+            color: #ffc107;
+            font-size: 24px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .description {
+            color: #ffd54f;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .status {
+            color: rgba(255, 193, 7, 0.7);
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+        
+        .content {
+            text-align: left;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px 0;
+        }
+        
+        .content h2 {
+            color: #ffc107;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        
+        .content p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffc107, transparent);
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="data:image/png;base64,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" alt="Arbitrajtrobotum Logo" class="logo">
+        <h1>BAKIM</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Arbitrajtrobotum</p>
+        <p class="description">Yapay Zeka Robot Yazılımı</p>
+        <p class="status">Site şu anda bakımda</p>
+    </div>
+</body>
+</html>
